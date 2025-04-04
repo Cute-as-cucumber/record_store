@@ -13,15 +13,15 @@ import './assets/styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomeScreen from './screens/HomeScreen';
-
+import ProductScreen from './screens/ProductScreen';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     //whatever in element is gonna be rendered, if we are on the URL link pointed by path
     <Route path = "/" element = {<App />}>
       {/** nested routes; If child has index = true it means it points to the same URL as the parent*/}
-      <Route index = {true} path = '/' element = {<HomeScreen />}>
-      </Route>
+      <Route index = {true} path = '/' element = {<HomeScreen />}></Route>
+      <Route path = '/product/:id' element = {<ProductScreen />}></Route>
     </Route>
   )
 )
