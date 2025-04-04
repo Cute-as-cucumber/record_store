@@ -1,7 +1,7 @@
 import {Container} from "react-bootstrap";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import HomeScreen from "./screens/HomeScreen";
+import {Outlet} from "react-router-dom";
 
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
       {/* py-3 adds padding at top and bottom */}
       <main className = "py-3">
         <Container>
-          <HomeScreen />
+          <Outlet />
         </Container>
       </main>
       <Footer />
