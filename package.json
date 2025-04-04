@@ -1,0 +1,31 @@
+{
+  "name": "record_shop",
+  "version": "1.0.0",
+  "description": "eCommerce application built with MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cute-as-cucumber/record_store.git"
+  },
+  "author": "Jiaqi Hannah Guo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cute-as-cucumber/record_store/issues"
+  },
+  "homepage": "https://github.com/Cute-as-cucumber/record_store#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
+  }
+}
