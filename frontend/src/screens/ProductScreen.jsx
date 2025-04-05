@@ -19,7 +19,7 @@ const ProductScreen = () => {
             const {data} = await axios.get(`/api/products/${productId}`);
             setProduct(data);
         }
-        fetchProduct();
+        fetchProduct();     
         
     }, [productId])
 
