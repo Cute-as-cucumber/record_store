@@ -9,7 +9,7 @@ const orderSchema = new mongoose.Schema({
         ref: "User",
     },
     //orderItems is an array of objects
-    orderItems: [
+    orderItems: [,
         {
             name: {type: String, required: true},
             qty: {type: Number, required: true},
