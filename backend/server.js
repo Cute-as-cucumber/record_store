@@ -1,5 +1,6 @@
 import express from 'express';
-import products from './data/products.js';
+
+import productRoutes from './routes/productRoutes.js';
 import dotenv from 'dotenv';
 dotenv.config();
 import connectDB from './config/db.js';
@@ -11,16 +12,12 @@ const port = process.env.PORT;
 
 const app = express();
 
-//registering the rule: if someone goes to / respond with blah blah
-app.get('/api/products', (req, res) => { 
-    res.json(products);
+app.get('/', (req, res) => {
+    res.send('API is running...');
 });
 
-//create a route for a single product
-app.get('/api/products/:id', (req, res) => {
-    const product = products.find((p) => p._id === req.params.id);
-    res.json(product);
-});
+// Routes in productRoutes.js will be prefixed with /api/products
+app.use('/api/products', productRoutes);
 
 
 // starts the server and makes it “listen” for requests on port 5001.
