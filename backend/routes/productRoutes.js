@@ -21,8 +21,14 @@ router.get('/:id', asyncHandler(async (req, res) => {
     
     if (product) {
         return res.json(product);
+    } else {
+        //without this server send 200 ok with null
+        res.status(404);
+        //use ErrorHandler
+        //we don't need to bring Errorhandler again because we already did that in server.js
+        // which is the central entry point
+        throw new Error('Resource not found');
     }
-    res.status(404).json({message: "Product not found"});
 }));
 
 
